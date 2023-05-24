@@ -1,23 +1,40 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+
+  const [todos, setTodos] = useState([]);
+  const [input, setInput] = useState('');
+
+  
+
+  const textHandler = (event) =>{
+    setInput(event.target.value)
+  };
+
+  const submitHandler = (event) =>{
+    event.preventDefault();
+
+    if(input){
+      const newTodos = { "id" : todos.length +1 , "name" : input };
+      // setTodos([...todos , newTodos])
+      setTodos([...todos, newTodos])
+      console.log(todos)
+      setInput("");
+    }
+
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <form onSubmit={submitHandler}>
+        <input type="text" placeholder='Enter your name' value={input} onChange={textHandler} />
+        <button type="submit">Add todo</button>
+      </form>
+       
+
+       {todos.map((todo) => <h1>{todo.name}</h1> )}
     </div>
   );
 }
