@@ -36,3 +36,43 @@
     transform: rotate(360deg);
   }
 }
+
+
+.form{
+  max-width: 600px;
+  border: 2px solid grey;
+  margin: 10px auto;
+  padding: 20px; 
+}
+
+.form .inputfield{
+  padding: 8px 100px;
+}
+.form .button{
+  padding: 8px;
+  background-color: #B04759;
+  margin-left: 5px;
+  color: #fff;
+  border: 2px solid #B04759;
+}
+
+.form .heading{
+  font-weight: bolder;
+  font-size: 22px;
+}
+
+.form .heading.invalid{
+  font-weight: bolder;
+  font-size: 26px;
+  color: red;
+} 
+
+.head{
+  max-width: 640px;
+  background-color: #B04759;
+  color: #fff;
+  border: 2px solid #B04759;
+  margin: 5px auto;
+  word-break: break-all;
+  font-size: 26px;
+}
